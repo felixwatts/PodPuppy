@@ -13,4 +13,4 @@
 
 ## User guide
 
-[PodPuppy User Guide](https://felixwatts.github.io/podpuppy)
+[PodPuppy User Guide](https://felixwatts.github.io/podpuppy/)
