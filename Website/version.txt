@@ -1,0 +1,5 @@
+0.7.0.0
+New stuff:
+
++ Nearly all reported bugs have been fixed.
++ Control all feed properties at any time (not just at subscription).

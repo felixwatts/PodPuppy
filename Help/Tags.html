@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PodPuppy User Guide</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+</head>
+<body>
+    <div class="outer">
+        <br />
+        <br />
+        <div class="inner">
+            <div class="header">
+                <img src="images/title.jpg" alt="PodPuppy - Free Podcast Reveiver" />
+            </div>
+            <div class="menubar">
+            </div>
+            <div class="content">
+
+                <ol class="sectionsList">
+                    <li>
+                        <h2>
+                            <a class="anchor" id="Getting_Started">Tag Tokens</a></h2>
+                        <p>
+                            In order to help customize item tags and filenames, you can use the following special
+                            tokens in the tag and filename fields. These tokens will be replaced by the relevant
+                            text when the item is saved or tagged. Any text other than these tokens is copied unchanged
+                             to item filename or tag. Where required, the file type extension (e.g. .mp3) is added automatically.</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Token</b></td>
+                                <td>
+                                    <b>Will be replaced by...</b></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    %t</td>
+                                <td>
+                                    The title of the item.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    %p</td>
+                                <td>
+                                    The title of the Podcast that the item belongs to.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    %d</td>
+                                <td>
+                                    The publication date of the item, in the date format of your culture.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    %D</td>
+                                <td>
+                                    The day of the publication date (00-31).</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    %M</td>
+                                <td>
+                                    The month of the publication date (01-12).</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    %Y</td>
+                                <td>
+                                    The year of the publication date.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    %n</td>
+                                <td>
+                                    A number that can be used to order items by download time. Later items get higher
+                                    numbers. If you use this as the first part of the filename or title tag then items
+                                    will appear in order of download on most portable media players.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    %N</td>
+                                <td>
+                                    A number that can be used to order items by download time. Later items get lower
+                                    numbers. If you use this as the first part of the filename or title tag then items
+                                    will appear in reverse order of download (latest first) on most portable media players.</td>
+                            </tr>
+                        </table>
+                        
+                        <p>For example...</p>
+                        
+                        <p><b>%n %D.%M.%Y %p - %t</b></p>
+                        
+                        <p>Could become...</p>
+                        
+                        <p><b>001 16.12.2008 BBC News Podcast - 16th December Edition</b></p>
+                        
+                        <p></p>
+                    </li>
+                </ol>
+                <br />
+                <br />
+            </div>
+        </div>
+        <br />
+        <br />
+    </div>
+</body>
+</html>

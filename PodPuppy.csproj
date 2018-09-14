@@ -1,0 +1,322 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DBADBAF2-8F25-4525-AC7A-E28761CF2F48}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PodPuppy</RootNamespace>
+    <AssemblyName>PodPuppy</AssemblyName>
+    <SignManifests>false</SignManifests>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <ApplicationIcon>PodPuppy.ico</ApplicationIcon>
+    <StartupObject>PodPuppy.Program</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CentredDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="DeleteFileDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteFileDlg.Designer.cs">
+      <DependentUpon>DeleteFileDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadManager.cs" />
+    <Compile Include="DownloadWorkerPool.cs" />
+    <Compile Include="DriveDetector.cs" />
+    <Compile Include="Feed.cs">
+    </Compile>
+    <Compile Include="FeedException.cs" />
+    <Compile Include="FeedFetchDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeedFetchDlg.Designer.cs">
+      <DependentUpon>FeedFetchDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeedFetcher.cs" />
+    <Compile Include="FeedTagsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeedTagsDlg.Designer.cs">
+      <DependentUpon>FeedTagsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetLatestDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetLatestDlg.Designer.cs">
+      <DependentUpon>GetLatestDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContentRange.cs" />
+    <Compile Include="InterprocessCommunication.cs" />
+    <Compile Include="Item.cs">
+    </Compile>
+    <Compile Include="HTMLViewDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HTMLViewDlg.Designer.cs">
+      <DependentUpon>HTMLViewDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemTagsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemTagsDlg.Designer.cs">
+      <DependentUpon>ItemTagsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KeyedList.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyIconManager.cs" />
+    <Compile Include="OptionsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionsDlg.designer.cs">
+      <DependentUpon>OptionsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="About.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteFileDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DeleteFileDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeedFetchDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FeedFetchDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeedTagsDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FeedTagsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetLatestDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GetLatestDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTMLViewDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HTMLViewDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemTagsDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ItemTagsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionsDlg.resx">
+      <DependentUpon>OptionsDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportBugDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReportBugDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeedTagsControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FeedTagsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeedPropertiesDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FeedPropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubscribeDialog2.resx">
+      <DependentUpon>SubscribeDialog2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnsubscribeDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UnsubscribeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ReportBugDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBugDlg.Designer.cs">
+      <DependentUpon>ReportBugDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RFC822DateTime.cs" />
+    <Compile Include="Schedule.cs" />
+    <Compile Include="ScheduleControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FixedLengthFileTraceListener.cs" />
+    <Compile Include="Statics.cs" />
+    <Compile Include="FeedTagsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FeedTagsControl.Designer.cs">
+      <DependentUpon>FeedTagsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeedPropertiesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeedPropertiesDialog.Designer.cs">
+      <DependentUpon>FeedPropertiesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubscribeDialog2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubscribeDialog2.Designer.cs">
+      <DependentUpon>SubscribeDialog2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThrottledStreamPool.cs" />
+    <Compile Include="Tools\Misc.cs" />
+    <Compile Include="UnhandledExceptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnhandledExceptionDialog.Designer.cs">
+      <DependentUpon>UnhandledExceptionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnsubscribeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnsubscribeDialog.Designer.cs">
+      <DependentUpon>UnsubscribeDialog.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resume2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moveDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moveUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\puppylogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Help\PodPuppy User Guide.html" />
+    <Content Include="Help\stylesheet.css" />
+    <Content Include="Help\Tags.html" />
+    <Content Include="PodPuppy User Licence.txt" />
+    <Content Include="PodPuppy.ico" />
+    <None Include="Resources\DownloadAnim1.bmp" />
+    <None Include="Resources\notify_icon_dl_1.png" />
+    <None Include="Resources\notify_icon_dl_2.png" />
+    <None Include="Resources\notify_icon_dl_3.png" />
+    <None Include="Resources\notify_icon_dl_4.png" />
+    <None Include="Resources\DownloadAnim4.ico" />
+    <None Include="Resources\DownloadAnim1.ico" />
+    <None Include="Resources\DownloadAnim2.ico" />
+    <None Include="Resources\DownloadAnim3.ico" />
+    <None Include="Resources\UpToDate.ico" />
+    <None Include="Resources\Paused.ico" />
+    <None Include="Resources\Refeshing.ico" />
+    <None Include="Resources\DownloadAnim8.ico" />
+    <None Include="Resources\DownloadAnim5.ico" />
+    <None Include="Resources\DownloadAnim6.ico" />
+    <None Include="Resources\DownloadAnim7.ico" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\tag.png" />
+    <None Include="Resources\add2_small.png" />
+    <Content Include="stylesheet.css" />
+    <None Include="App.config" />
+    <None Include="Resources\folder2.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\scheduleControlBg.png" />
+    <None Include="Properties\DataSources\Statics.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="ID3Sharp\ID3Sharp.csproj">
+      <Project>{845B47A5-0529-47BD-AFEC-533A2DE1B6FA}</Project>
+      <Name>ID3Sharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

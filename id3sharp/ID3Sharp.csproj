@@ -1,0 +1,104 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{845B47A5-0529-47BD-AFEC-533A2DE1B6FA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ID3Sharp</RootNamespace>
+    <AssemblyName>ID3Sharp</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>ID3Sharp.snk.pfx</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules>-Microsoft.Globalization#CA1301;-Microsoft.Globalization#CA1302;-Microsoft.Globalization#CA1303;-Microsoft.Globalization#CA1306;-Microsoft.Globalization#CA1304;-Microsoft.Globalization#CA1305;-Microsoft.Globalization#CA1300;-Microsoft.Interoperability#CA1403;-Microsoft.Interoperability#CA1406;-Microsoft.Interoperability#CA1413;-Microsoft.Interoperability#CA1402;-Microsoft.Interoperability#CA1407;-Microsoft.Interoperability#CA1404;-Microsoft.Interoperability#CA1410;-Microsoft.Interoperability#CA1411;-Microsoft.Interoperability#CA1405;-Microsoft.Interoperability#CA1409;-Microsoft.Interoperability#CA1415;-Microsoft.Interoperability#CA1408;-Microsoft.Interoperability#CA1414;-Microsoft.Interoperability#CA1412;-Microsoft.Interoperability#CA1400;-Microsoft.Interoperability#CA1401</CodeAnalysisRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Demo.cs" />
+    <Compile Include="Frames\COMMFrame.cs" />
+    <Compile Include="Frames\FrameComposite.cs" />
+    <Compile Include="Frames\FrameCompositeException.cs" />
+    <Compile Include="Frames\FrameRegistry.cs" />
+    <Compile Include="Frames\FramesException.cs" />
+    <Compile Include="Frames\FrameType.cs" />
+    <Compile Include="Frames\FrameTypeNotRegisteredException.cs" />
+    <Compile Include="Frames\FrameValidationException.cs" />
+    <Compile Include="Frames\GEOBFrame.cs" />
+    <Compile Include="IO\InvalidTextEncodingTypeException.cs" />
+    <Compile Include="Frames\PCNTFrame.cs" />
+    <Compile Include="Frames\PRIVFrame.cs" />
+    <Compile Include="Frames\TCONFrame.cs" />
+    <Compile Include="Frames\TextInformationFrame.cs" />
+    <Compile Include="Frames\TRCKFrame.cs" />
+    <Compile Include="Frames\TXXXFrame.cs" />
+    <Compile Include="Frames\UFIDFrame.cs" />
+    <Compile Include="Frames\UnimplementedFrame.cs" />
+    <Compile Include="Frames\URLLinkFrame.cs" />
+    <Compile Include="Frames\WXXXFrame.cs" />
+    <Compile Include="ID3Genre.cs" />
+    <Compile Include="ID3Tag.cs" />
+    <Compile Include="ID3v1Tag.cs" />
+    <Compile Include="ID3v2Frame.cs" />
+    <Compile Include="ID3v2Tag.cs" />
+    <Compile Include="ID3Versions.cs" />
+    <Compile Include="IO\EncodedInteger.cs" />
+    <Compile Include="IO\EncodedString.cs" />
+    <Compile Include="IO\IOException.cs" />
+    <Compile Include="IO\IOValidationException.cs" />
+    <Compile Include="IO\SynchsafeInteger.cs" />
+    <Compile Include="IO\TextEncodingType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TagNotFoundException.cs" />
+    <Compile Include="UnsupportedVersionException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ID3Sharp.snk.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

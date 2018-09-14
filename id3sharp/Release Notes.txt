@@ -1,0 +1,3 @@
+*** Version 0.2-Dev - Feb. 25, 2006 ***
+
+This is a development release of the forthcoming Version 0.2. It is expected that the code contains numerous bugs and may not be functional.

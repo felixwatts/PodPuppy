@@ -1,0 +1,18 @@
+﻿PodPuppy End User license
+=========================
+
+PLEASE READ THIS LICENSE CAREFULLY. BY USING PODPUPPY YOU ARE AGREEING TO BE BOUND BY THESE
+TERMS.
+
+1) Copying and Distribution: 
+
+You may freely copy and distribute PodPuppy in its complete and unaltered state
+as long as you give credit to the author and prominently mention the URL
+http://www.podpuppy.net at all distribution points.
+
+All other copying and distribution is prohibited.
+
+2) Liability:
+
+PodPuppy is provided without any claim of fitness for a particular purpose. The 
+author cannot be held liable for any damage or loss resulting from the use of PodPuppy.

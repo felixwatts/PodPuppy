@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PodPuppy - Free Podcast Receiver</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+</head>
+<body>
+    <div class="outer">
+        <br />
+        <br />
+        <div class="inner">
+            <div class="header">
+                <img src="images/title.png" alt="PodPuppy - Free Podcast Reveiver" />
+            </div>
+            <div class="menubar">
+                <a class="menubar" href="index.html">home</a> . <a class="menubar" href="downloads.html">
+                    downloads</a> . <a class="menubar" href="./forum/">forum</a> . <a class="menubar"
+                        href="screenshot.html">screenshots</a>
+            </div>
+            <div class="content">
+                <h2>
+                    Report a Bug</h2>
+                <p>
+                    Thankyou for taking the time to report a problem with PodPuppy. Please fill in the
+                    form below with as much detail as possible. Your report will be sent to the PodPuppy
+                    team together with some diagnostic information. We will endeavour to fix the problem
+                    as soon as possible.</p>
+                    <br />
+                <form action="reportBug.php" enctype=""    style="border:0;background-color:Transparent">
+                    <div class="newsPanel">
+                        <div class="newsTitle">
+                            Description of problem</div>
+                        <textarea id="probDesc" cols="40" rows="8" style="margin:16px auto 0 auto;display:block" ></textarea>
+                        <div class="newsTitle">
+                            Diagnostic Information</div>
+                        <textarea id="diagnostics" cols="40" rows="8" readonly="readonly" style="margin:16px auto 0 auto;display:block" >
+                          <?php
+                          
+                          echo $_GET["report"];
+                          
+                          ?>
+                          
+                        </textarea>
+                        <input type="submit" value="Send Report" style="margin:16px auto 0 auto;display:block" />
+                        <br />
+                    </div>
+                </form>
+                <br />
+                <br />
+            </div>
+        </div>
+        <br />
+        <br />
+    </div>
+</body>
+</html>
