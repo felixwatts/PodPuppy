@@ -240,6 +240,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="README.md" />
     <None Include="Resources\remove2.png" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,5 @@
 ﻿# PodPuppy
-*A simple podcast receiver for windows*
+*A simple podcast receiver for Windows*
 
 ## Features
 
@@ -9,6 +9,8 @@
 
 ## Download
 
+[PodPuppy v1.0 Installer](https://felixwatts.github.io/podpuppy/PodPuppy-v1.0.msi)
+
 ## User guide
 
-[PodPuppy User Guide](https://username.github.io/podpuppy)
+[PodPuppy User Guide](https://felixwatts.github.io/podpuppy)
