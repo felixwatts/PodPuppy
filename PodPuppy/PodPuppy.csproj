@@ -337,7 +337,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="ID3Sharp\ID3Sharp.csproj">
+    <ProjectReference Include="..\ID3Sharp\ID3Sharp.csproj">
       <Project>{845B47A5-0529-47BD-AFEC-533A2DE1B6FA}</Project>
       <Name>ID3Sharp</Name>
     </ProjectReference>

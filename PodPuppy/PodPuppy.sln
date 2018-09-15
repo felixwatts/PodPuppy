@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodPuppy", "PodPuppy.csproj", "{DBADBAF2-8F25-4525-AC7A-E28761CF2F48}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3Sharp", "ID3Sharp\ID3Sharp.csproj", "{845B47A5-0529-47BD-AFEC-533A2DE1B6FA}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PodPuppyInstaller", "PodPuppyInstaller\PodPuppyInstaller.vdproj", "{84C7710E-5480-4399-8F13-61804814D077}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBADBAF2-8F25-4525-AC7A-E28761CF2F48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBADBAF2-8F25-4525-AC7A-E28761CF2F48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBADBAF2-8F25-4525-AC7A-E28761CF2F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBADBAF2-8F25-4525-AC7A-E28761CF2F48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{845B47A5-0529-47BD-AFEC-533A2DE1B6FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{845B47A5-0529-47BD-AFEC-533A2DE1B6FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{845B47A5-0529-47BD-AFEC-533A2DE1B6FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{845B47A5-0529-47BD-AFEC-533A2DE1B6FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84C7710E-5480-4399-8F13-61804814D077}.Debug|Any CPU.ActiveCfg = Debug
+		{84C7710E-5480-4399-8F13-61804814D077}.Debug|Any CPU.Build.0 = Debug
+		{84C7710E-5480-4399-8F13-61804814D077}.Release|Any CPU.ActiveCfg = Release
+		{84C7710E-5480-4399-8F13-61804814D077}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C06CEF3A-A96B-40B7-B98C-0ABDF668E1B7}
+	EndGlobalSection
+EndGlobal

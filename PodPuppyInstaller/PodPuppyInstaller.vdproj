@@ -27,14 +27,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8004D3D5F5DC45DE8AD150B6035FAE3B"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_BA6F87F334617AAFD4BA8D3DA9C74B53"
+        "OwnerKey" = "8:_117AD3967FBF47AC967559564F704FE3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_BA6F87F334617AAFD4BA8D3DA9C74B53"
-        "OwnerKey" = "8:_117AD3967FBF47AC967559564F704FE3"
+        "MsmKey" = "8:_BF191A0C63D5432A84EF47730E1C9007"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -181,26 +181,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8004D3D5F5DC45DE8AD150B6035FAE3B"
-            {
-            "SourcePath" = "8:..\\PodPuppy.ico"
-            "TargetName" = "8:PodPuppy.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_897A16D08B5E43B1A5635599082BF7CE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BA6F87F334617AAFD4BA8D3DA9C74B53"
             {
             "AssemblyRegister" = "3:1"
@@ -230,6 +210,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BF191A0C63D5432A84EF47730E1C9007"
+            {
+            "SourcePath" = "8:..\\PodPuppy\\PodPuppy.ico"
+            "TargetName" = "8:PodPuppy.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_897A16D08B5E43B1A5635599082BF7CE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -306,7 +306,7 @@
         "Keywords" = "8:PodPuppy, podcast, podcatcher, receiver"
         "ARPCOMMENTS" = "8:A simple podcast receiver for Windows"
         "ARPURLINFOABOUT" = "8:https://github.com/felixwatts/PodPuppy"
-        "ARPPRODUCTICON" = "8:_8004D3D5F5DC45DE8AD150B6035FAE3B"
+        "ARPPRODUCTICON" = "8:_BF191A0C63D5432A84EF47730E1C9007"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -409,7 +409,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2BDB01B6B82E400384748EBABE8ADD47"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3EB9F8FA94B84F4795024F7DA8F01258"
             {
             "Name" = "8:PodPuppy"
             "Arguments" = "8:"
@@ -420,7 +420,7 @@
             "Target" = "8:_117AD3967FBF47AC967559564F704FE3"
             "Folder" = "8:_4A675ADAE81F4EE49EABCB87DE5AA757"
             "WorkingFolder" = "8:_897A16D08B5E43B1A5635599082BF7CE"
-            "Icon" = "8:_8004D3D5F5DC45DE8AD150B6035FAE3B"
+            "Icon" = "8:_BF191A0C63D5432A84EF47730E1C9007"
             "Feature" = "8:"
             }
         }
@@ -824,7 +824,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_117AD3967FBF47AC967559564F704FE3"
             {
-            "SourcePath" = "8:..\\obj\\Release\\PodPuppy.exe"
+            "SourcePath" = "8:..\\PodPuppy\\obj\\Release\\PodPuppy.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_897A16D08B5E43B1A5635599082BF7CE"
