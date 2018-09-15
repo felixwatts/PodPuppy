@@ -279,10 +279,22 @@
     <None Include="Resources\puppylogo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Help\PodPuppy User Guide.html" />
-    <Content Include="Help\ReleaseNotes.txt" />
-    <Content Include="Help\stylesheet.css" />
-    <Content Include="Help\Tags.html" />
+    <Content Include="Help\images\puppylogo.jpg" />
+    <Content Include="Help\images\screenshot1.png" />
+    <Content Include="Help\images\screenshot2.png" />
+    <Content Include="Help\images\screenshot3.png" />
+    <Content Include="Help\images\title.jpg" />
+    <Content Include="Help\images\toolbar.png" />
+    <Content Include="Help\PodPuppy User Guide.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ReleaseNotes.txt" />
+    <Content Include="Help\stylesheet.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Help\Tags.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="PodPuppy User Licence.txt" />
     <Content Include="PodPuppy.ico" />
     <None Include="Resources\DownloadAnim1.bmp" />

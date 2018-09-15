@@ -1695,7 +1695,7 @@ namespace PodPuppy
         {
             try
             {
-                Process.Start(Application.StartupPath + "\\PodPuppy User Guide.html");
+                Process.Start(Application.StartupPath + "\\Help\\PodPuppy User Guide.html");
             }
             catch { }
         }

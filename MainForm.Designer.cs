@@ -764,28 +764,28 @@ namespace PodPuppy
             // menuMainHelpUserGuide
             // 
             this.menuMainHelpUserGuide.Name = "menuMainHelpUserGuide";
-            this.menuMainHelpUserGuide.Size = new System.Drawing.Size(142, 22);
+            this.menuMainHelpUserGuide.Size = new System.Drawing.Size(180, 22);
             this.menuMainHelpUserGuide.Text = "&User Guide";
             this.menuMainHelpUserGuide.Click += new System.EventHandler(this.menuMainHelpUserGuideClick);
             // 
             // menuMainHelpVisitWebsite
             // 
             this.menuMainHelpVisitWebsite.Name = "menuMainHelpVisitWebsite";
-            this.menuMainHelpVisitWebsite.Size = new System.Drawing.Size(142, 22);
+            this.menuMainHelpVisitWebsite.Size = new System.Drawing.Size(180, 22);
             this.menuMainHelpVisitWebsite.Text = "&Visit Website";
             this.menuMainHelpVisitWebsite.Click += new System.EventHandler(this.menuMainHelpVisitWebsiteClick);
             // 
             // reportABugToolStripMenuItem
             // 
             this.reportABugToolStripMenuItem.Name = "reportABugToolStripMenuItem";
-            this.reportABugToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.reportABugToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reportABugToolStripMenuItem.Text = "Report a Bug";
             this.reportABugToolStripMenuItem.Click += new System.EventHandler(this.reportABugToolStripMenuIte_Click);
             // 
             // menuMainHelpAbout
             // 
             this.menuMainHelpAbout.Name = "menuMainHelpAbout";
-            this.menuMainHelpAbout.Size = new System.Drawing.Size(142, 22);
+            this.menuMainHelpAbout.Size = new System.Drawing.Size(180, 22);
             this.menuMainHelpAbout.Text = "&About...";
             this.menuMainHelpAbout.Click += new System.EventHandler(this.menuMainHelpAboutClick);
             // 
