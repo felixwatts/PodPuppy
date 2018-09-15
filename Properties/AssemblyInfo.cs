@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("PodPuppy")]
-[assembly: AssemblyDescription("Free Podcatcher for Windows")]
+[assembly: AssemblyDescription("Free, open source podcast receiver for Windows")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("FelixWatts")]
 [assembly: AssemblyProduct("PodPuppy")]
-[assembly: AssemblyCopyright("Copyright ©  2007")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: CLSCompliant(true)]
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("0.7.0.*")]
-[assembly: AssemblyFileVersion("0.7.0.0")]
+[assembly: AssemblyVersion("1.0.0.*")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

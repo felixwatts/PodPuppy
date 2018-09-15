@@ -1,11 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml;
 using System.Net;
-using System.IO;
 using System.Text.RegularExpressions;
-using System.Threading;
 
 namespace PodPuppy
 {
@@ -16,10 +12,7 @@ namespace PodPuppy
         private bool _busy;
         private bool _canceled;
         private string _url;
-        private WebRequest _webRequest;
         private OnFeedFetchedHandler _onFeedFetched;
-
-        private FeedFetcher _redirectFetcher;
 
         private static Regex _altLinkRgx = null;
         private static Regex _altLinkURLRgx = null;
@@ -42,86 +35,35 @@ namespace PodPuppy
             get { return _busy; }
         }
 
-        public bool Fetch(string url, OnFeedFetchedHandler onFeedFetched)
+        public void FetchIfNotBusy(string url, OnFeedFetchedHandler onFeedFetched)
         {
-            return Fetch(url, onFeedFetched, true);
+            Fetch(url, onFeedFetched, true);
         }
 
-        private bool Fetch(string url, OnFeedFetchedHandler onFeedFetched, bool externalCall)
+        private async void Fetch(string url, OnFeedFetchedHandler onFeedFetched, bool externalCall)
         {
             if (externalCall && _busy)
-                return false;
+                return;
             _busy = true;
 
             _url = url;
 
             _canceled = false;
             _onFeedFetched = onFeedFetched;
-
-            _webRequest = WebRequest.Create(url);
-            HttpWebRequest httpRequest = _webRequest as HttpWebRequest;
-            httpRequest.UserAgent = "PodPuppy " + Statics.VersionNumber + " (www.podpuppy.net)";
-
-            // Annoyingly we have to this bit on a background thread
-            // becuase sometimes HttpWebRequest.BeginGetResponse blocks!!!
-            Thread thread = new Thread(new ThreadStart(DoFetch));
-            thread.Start();
-
-            return true;
-        }
-
-        private void DoFetch()
-        {
-            _webRequest.BeginGetResponse(OnGotResponseStream, null);
-        }
-
-        public void CancelFetch()
-        {
-            // TODO - possible cross-thread issues
-            if (_webRequest != null)
-                _webRequest.Abort();
-
-            _canceled = true;
-        }
-
-        private void OnGotResponseStream(IAsyncResult result)
-        {
+                    
+            var client = new System.Net.Http.HttpClient(new System.Net.Http.HttpClientHandler() { AllowAutoRedirect = true });            
+            
             try
             {
-                WebResponse response = _webRequest.EndGetResponse(result);
+                var content = await client.GetStringAsync(_url);
 
-                Stream responseStream = response.GetResponseStream();
-
-                MemoryStream memoryStream = new MemoryStream();
-
-                byte[] buffer = new byte[ReadBufferLengthBytes];
-                int offset = 0;
-                int bytesRead = 0;
-                do
-                {
-                    bytesRead = responseStream.Read(buffer, 0, ReadBufferLengthBytes);
-                    memoryStream.Write(buffer, 0, bytesRead);
-                    offset += bytesRead;
-                    
-                    if (_canceled)
-                    {
-                        if (_onFeedFetched != null)
-                        {
-                            _onFeedFetched(FeedRefreshResult.Canceled, null, null, null);
-                            return;
-                        }
-                    }
-
-                } while (bytesRead > 0);
-
-                // finished with _webRequest, can re-enter now.
-                _webRequest = null;
+                if (_canceled)
+                    return;
 
                 try
                 {
-                    memoryStream.Position = 0;
                     XmlDocument doc = new XmlDocument();
-                    doc.Load(memoryStream);
+                    doc.LoadXml(content);
 
                     if (_onFeedFetched != null)
                     {
@@ -132,12 +74,9 @@ namespace PodPuppy
                 catch (XmlException)
                 {
                     // maybe its non-xml html with a link to a feed..
-                    
+
                     try
                     {
-                        memoryStream.Position = 0;
-                        string content = new StreamReader(memoryStream).ReadToEnd();
-
                         MatchCollection matches = _altLinkRgx.Matches(content);
                         foreach (Match match in matches)
                         {
@@ -194,16 +133,15 @@ namespace PodPuppy
                     }
                 }
             }
-            finally 
-            { 
+            finally
+            {
                 _busy = false;
-            }
+            }           
         }
 
-        private void OnRedirectFetched(FeedRefreshResult status, XmlDocument feed, string errorMsg, string url)
+        public void CancelFetch()
         {
-            if (_onFeedFetched != null)
-                _onFeedFetched(status, feed, errorMsg, url);
+            _canceled = true;
         }
     }
 }

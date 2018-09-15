@@ -188,7 +188,7 @@ namespace PodPuppy
 
         private void SubscribeOrSearch()
         {
-            if (toolStripTextBox.Text.StartsWith("http://"))
+            if (toolStripTextBox.Text.StartsWith("http://") || toolStripTextBox.Text.StartsWith("https://"))
             {
                 AddFeed(toolStripTextBox.Text);
             }
@@ -1741,7 +1741,7 @@ namespace PodPuppy
         {
             try
             {
-                Process.Start("http://www.podpuppy.net");
+                Process.Start("https://github.com/felixwatts/PodPuppy");
             }
             catch (Exception) { }
         }

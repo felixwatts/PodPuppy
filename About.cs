@@ -14,7 +14,7 @@ namespace PodPuppy
         {
             InitializeComponent();
 
-            lblVersionNum.Text = Statics.VersionNumber;
+            lblVersionNum.Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

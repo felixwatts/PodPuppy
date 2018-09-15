@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3Sharp", "ID3Sharp\ID3Sha
 		Release.AspNetCompiler.Debug = "False"
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PodPuppyInstaller", "PodPuppyInstaller\PodPuppyInstaller.vdproj", "{06CE69B5-DCE9-40E2-8B9E-DDBB9B8B78E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{845B47A5-0529-47BD-AFEC-533A2DE1B6FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{845B47A5-0529-47BD-AFEC-533A2DE1B6FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{845B47A5-0529-47BD-AFEC-533A2DE1B6FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06CE69B5-DCE9-40E2-8B9E-DDBB9B8B78E2}.Debug|Any CPU.ActiveCfg = Debug
+		{06CE69B5-DCE9-40E2-8B9E-DDBB9B8B78E2}.Debug|Any CPU.Build.0 = Debug
+		{06CE69B5-DCE9-40E2-8B9E-DDBB9B8B78E2}.Release|Any CPU.ActiveCfg = Release
+		{06CE69B5-DCE9-40E2-8B9E-DDBB9B8B78E2}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

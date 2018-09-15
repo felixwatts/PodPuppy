@@ -50,7 +50,7 @@ namespace PodPuppy
             this.label1.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(200, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 27);
+            this.label1.Size = new System.Drawing.Size(106, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "PodPuppy";
             // 
@@ -70,7 +70,7 @@ namespace PodPuppy
             this.label3.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(258, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 16);
+            this.label3.Size = new System.Drawing.Size(64, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Felix Watts";
             // 
@@ -80,9 +80,9 @@ namespace PodPuppy
             this.label4.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(258, 93);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 16);
+            this.label4.Size = new System.Drawing.Size(173, 16);
             this.label4.TabIndex = 5;
-            this.label4.Text = "www.podpuppy.net";
+            this.label4.Text = "github.com/felixwatts/PodPuppy";
             // 
             // label5
             // 
@@ -110,7 +110,7 @@ namespace PodPuppy
             this.label7.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(202, 120);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 16);
+            this.label7.Size = new System.Drawing.Size(53, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "Version:";
             // 
@@ -173,7 +173,7 @@ namespace PodPuppy
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(390, 239);
+            this.ClientSize = new System.Drawing.Size(447, 239);
             this.ControlBox = false;
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);

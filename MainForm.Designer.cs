@@ -34,12 +34,12 @@ namespace PodPuppy
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.syncProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lnkCancelSync = new System.Windows.Forms.ToolStripStatusLabel();
-            this.listFeeds = new System.Windows.Forms.ListView();
-            this.columnHeaderTitle = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderStatus = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderSynced = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderPriority = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderLatest = new System.Windows.Forms.ColumnHeader();
+            this.listFeeds = new PodPuppy.ListViewNoFlicker();
+            this.columnHeaderTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderSynced = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPriority = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderLatest = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuFeed = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuFeedRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFeedRemove = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,11 +66,11 @@ namespace PodPuppy
             this.btnAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
-            this.listItems = new System.Windows.Forms.ListView();
-            this.columnHeaderItemTitle = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderItemStatus = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderItemPubDate = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderItemDownloadDate = new System.Windows.Forms.ColumnHeader();
+            this.listItems = new PodPuppy.ListViewNoFlicker();
+            this.columnHeaderItemTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderItemStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderItemPubDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderItemDownloadDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuItem = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuItemPlay = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemOpenFolder = new System.Windows.Forms.ToolStripMenuItem();
@@ -177,13 +177,13 @@ namespace PodPuppy
             this.listFeeds.TabIndex = 4;
             this.listFeeds.UseCompatibleStateImageBehavior = false;
             this.listFeeds.View = System.Windows.Forms.View.Details;
+            this.listFeeds.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listFeedsColumnClick);
+            this.listFeeds.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.listFeedsItemDrag);
+            this.listFeeds.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listFeedsItemSelectionChanged);
             this.listFeeds.SelectedIndexChanged += new System.EventHandler(this.listFeedsSelectedIndexChanged);
             this.listFeeds.DragDrop += new System.Windows.Forms.DragEventHandler(this.listFeedsDragDrop);
-            this.listFeeds.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listFeedsColumnClick);
-            this.listFeeds.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listFeedsItemSelectionChanged);
             this.listFeeds.DragEnter += new System.Windows.Forms.DragEventHandler(this.listFeedsDragEnter);
             this.listFeeds.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listFeeds_KeyUp);
-            this.listFeeds.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.listFeedsItemDrag);
             // 
             // columnHeaderTitle
             // 
@@ -467,7 +467,7 @@ namespace PodPuppy
             this.toolStripTextBox.Size = new System.Drawing.Size(150, 27);
             this.toolStripTextBox.Text = " subscribe or search";
             this.toolStripTextBox.ToolTipText = "Enter the URL of a Podcast here to subscribe to it. Or enter some keywords to sea" +
-                "rch google for related podcasts.";
+    "rch google for related podcasts.";
             this.toolStripTextBox.Enter += new System.EventHandler(this.toolStripTextBoxEnter);
             this.toolStripTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.toolStripTextBoxKeyUp);
             this.toolStripTextBox.TextChanged += new System.EventHandler(this.toolStripTextBoxTextChanged);
@@ -513,10 +513,10 @@ namespace PodPuppy
             this.listItems.TabIndex = 6;
             this.listItems.UseCompatibleStateImageBehavior = false;
             this.listItems.View = System.Windows.Forms.View.Details;
-            this.listItems.DoubleClick += new System.EventHandler(this.listItemsDoubleClick);
             this.listItems.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listItemsColumnClick);
-            this.listItems.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listItemsItemSelectionChanged);
             this.listItems.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.listItemsItemDrag);
+            this.listItems.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listItemsItemSelectionChanged);
+            this.listItems.DoubleClick += new System.EventHandler(this.listItemsDoubleClick);
             // 
             // columnHeaderItemTitle
             // 
@@ -803,9 +803,9 @@ namespace PodPuppy
             this.MainMenuStrip = this.menuMain;
             this.MinimumSize = new System.Drawing.Size(488, 264);
             this.Name = "MainForm";
-            this.Text = "PodPuppy Beta";
-            this.Shown += new System.EventHandler(this.MainFormLoad);
+            this.Text = "PodPuppy";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
+            this.Shown += new System.EventHandler(this.MainFormLoad);
             this.Resize += new System.EventHandler(this.MainFormResize);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
@@ -828,7 +828,7 @@ namespace PodPuppy
         #endregion
 
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ListView listFeeds;
+        private PodPuppy.ListViewNoFlicker listFeeds;
         private System.Windows.Forms.ColumnHeader columnHeaderTitle;
         private System.Windows.Forms.ColumnHeader columnHeaderStatus;
         private System.Windows.Forms.ContextMenuStrip menuFeed;
@@ -867,7 +867,7 @@ namespace PodPuppy
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox;
         private System.Windows.Forms.ToolStripButton btnAdd;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.ListView listItems;
+        private PodPuppy.ListViewNoFlicker listItems;
         private System.Windows.Forms.ColumnHeader columnHeaderItemTitle;
         private System.Windows.Forms.ColumnHeader columnHeaderItemStatus;
         private System.Windows.Forms.ContextMenuStrip menuItem;

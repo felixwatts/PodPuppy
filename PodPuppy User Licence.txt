@@ -8,7 +8,7 @@ TERMS.
 
 You may freely copy and distribute PodPuppy in its complete and unaltered state
 as long as you give credit to the author and prominently mention the URL
-http://www.podpuppy.net at all distribution points.
+https://github.com/felixwatts/PodPuppy at all distribution points.
 
 All other copying and distribution is prohibited.
 

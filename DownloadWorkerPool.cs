@@ -197,7 +197,7 @@ namespace PodPuppy
                 {
                     request = WebRequest.Create(item.URL);
                     HttpWebRequest httpRequest = request as HttpWebRequest;
-                    httpRequest.UserAgent = "PodPuppy " + Statics.VersionNumber + " www.podpuppy.net";
+                    httpRequest.UserAgent = "PodPuppy " + Statics.VersionNumber + " github.com/felixwatts/PodPuppy";
 
                     if (httpRequest == null)
                         throw new NotSupportedException("Cannot download item '" + item.Title + "', Only HTTP resources are currently supported.");

@@ -1,0 +1,6 @@
+﻿PopPuppy Release Notes
+
+Version 1.0
+
+- Added HTTPS support
+- Fixed flickering of items in Podcast List and Episode List
