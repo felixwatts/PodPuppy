@@ -3,9 +3,9 @@
 
 ## Features
 
-* Subscribe to podcasts and automatically download new items
+* Subscribe to podcasts and receive new episodes as they are released
 * Organize your podcasts using folders and ID3 tags
-* Sync to a device
+* Sync to a device for listening on the go
 
 ## Download
 
