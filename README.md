@@ -9,7 +9,7 @@
 
 ## Download
 
-[PodPuppy v1.0 Installer](https://felixwatts.github.io/podpuppy/PodPuppy-v1.0.msi)
+[PodPuppy v1.0 Installer](https://felixwatts.github.io/podpuppy/PodPuppy_v1.0_Installer.msi)
 
 ## User guide
 
