@@ -140,6 +140,14 @@ namespace PodPuppy
                     }
                 }
             }
+            catch(Exception ex) 
+            {
+                if (_onFeedFetched != null)
+                {
+                    _onFeedFetched(FeedRefreshResult.UnableToConnect, null, ex.Message, null);
+                    return;
+                }
+            }
             finally
             {
                 _busy = false;
