@@ -7,13 +7,13 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="a4d2b038-3eee-4b66-b97d-315e1b2c9528"
-    Publisher="CN=felix"
-    Version="2.0.3.0" />
+    Name="FelixWatts.PodPuppy"
+    Publisher="CN=D2CBFC75-011A-4958-8F78-9F982241850B"
+    Version="2.0.7.0" />
 
   <Properties>
     <DisplayName>PodPuppy</DisplayName>
-    <PublisherDisplayName>felix</PublisherDisplayName>
+    <PublisherDisplayName>Felix Watts</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 

@@ -12,6 +12,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
 
 namespace PodPuppy
 {
@@ -26,11 +28,29 @@ namespace PodPuppy
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            var filePath = Path.Combine(Application.StartupPath, "KeyedListLicence.txt");
+
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show(this, "License file not found:\r\n" + filePath, "File not found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
-                System.Diagnostics.Process.Start(Application.StartupPath + "\\KeyedListLicence.txt");
+                var psi = new ProcessStartInfo
+                {
+                    FileName = filePath,
+                    UseShellExecute = true,
+                    Verb = "open"
+                };
+
+                Process.Start(psi);
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Unable to open the license file.\r\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

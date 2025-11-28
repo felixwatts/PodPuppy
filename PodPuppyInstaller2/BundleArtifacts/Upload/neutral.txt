@@ -1,0 +1,6 @@
+MainPackage=C:\Users\felix\source\repos\felixwatts\PodPuppy\PodPuppyInstaller2\bin\AnyCPU\Release\Upload\PodPuppyPackage_2.0.7.0_AnyCPU.appx
+SymbolPackage=C:\Users\felix\source\repos\felixwatts\PodPuppy\PodPuppyInstaller2\bin\AnyCPU\Release\Upload\PodPuppyPackage_2.0.7.0\PodPuppyPackage_2.0.7.0_AnyCPU.appxsym
+ResourcePack=C:\Users\felix\source\repos\felixwatts\PodPuppy\PodPuppyInstaller2\bin\AnyCPU\Release\Upload\PodPuppyPackage_2.0.7.0_scale-100.appx
+ResourcePack=C:\Users\felix\source\repos\felixwatts\PodPuppy\PodPuppyInstaller2\bin\AnyCPU\Release\Upload\PodPuppyPackage_2.0.7.0_scale-125.appx
+ResourcePack=C:\Users\felix\source\repos\felixwatts\PodPuppy\PodPuppyInstaller2\bin\AnyCPU\Release\Upload\PodPuppyPackage_2.0.7.0_scale-150.appx
+ResourcePack=C:\Users\felix\source\repos\felixwatts\PodPuppy\PodPuppyInstaller2\bin\AnyCPU\Release\Upload\PodPuppyPackage_2.0.7.0_scale-400.appx
