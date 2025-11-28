@@ -20,18 +20,15 @@ namespace PodPuppy
 {
     public partial class ReportBugDlg : CentredDialog
     {
-        private string _diagnostics = null;
-
         public ReportBugDlg()
         {
             InitializeComponent();
+
+            CompileDiagnostics();
         }
 
         private void CompileDiagnostics()
         {
-            if (_diagnostics != null)
-                return;
-
             StringBuilder sb = new StringBuilder();
 
             bool foundRightListener = false;
@@ -84,109 +81,47 @@ namespace PodPuppy
                         sb.Append("Exception when reading: " + exception.Message);
                     }
 
-                    _diagnostics = sb.ToString();
+                    _txtDiagnosticInformation.Text = sb.ToString();
                 }
             }
             if(!foundRightListener)
             {
                 Trace.TraceError("Unable to compile diagnostic report, there is no FixedLengthFileTraceListener registered.");
-                _diagnostics = "Unable to compile diagnostic report, there is no FixedLengthFileTraceListener registered.";
+                _txtDiagnosticInformation.Text = "Unable to compile diagnostic report, there is no FixedLengthFileTraceListener registered.";
             }
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void lnkPodPuppyRepo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CompileDiagnostics();
+            const string url = "https://github.com/felixwatts/PodPuppy";
 
-            btnSubmit.Text = "Sending...";
+            // mark link visited if possible
+            var link = sender as LinkLabel;
+            if (link != null)
+                link.LinkVisited = true;
 
-            HttpWebRequest rq = (HttpWebRequest)WebRequest.Create("http://fwatts.info/podpuppy/reportBug.php");
-            rq.Method = "POST";
-            rq.ContentType = "application/x-www-form-urlencoded";
-            rq.BeginGetRequestStream(new AsyncCallback(OnGotRequestStream), rq);
-        }
-
-        private void OnGotRequestStream(IAsyncResult result)
-        {
             try
             {
-                HttpWebRequest rq = (HttpWebRequest)result.AsyncState;
-                BackgroundWorker worker = new BackgroundWorker();
-                worker.DoWork += new DoWorkEventHandler(WriteToRequestStream);
-                worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_RunWorkerCompleted);
-                worker.RunWorkerAsync(rq);
+                // Preferred: let the system open the default browser for the URL
+                Process.Start(url);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Trace.TraceError("Error while sending bug report: " + ex.Message);
-            }
-        }
-
-        void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            if (!(bool)e.Result)
-            {
-                MessageBox.Show("PodPuppy encountered a problem and was unable to send your bug report. Please contact me at the following address for futher assistance.\n\nfelix@fwatts.info", "PodPuppy Bug Reporting", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                DialogResult = DialogResult.Abort;
-            }
-            else
-            {
-                DialogResult = DialogResult.OK;
-            }
-
-            Close();
-        }
-
-        void WriteToRequestStream(object sender, DoWorkEventArgs e)
-        {
-            try
-            {
-
-                WebRequest rq = (WebRequest)e.Argument;
-                Stream rqStr = rq.GetRequestStream();
-                StreamWriter writer = new StreamWriter(rqStr);
-                writer.Write("email=");
-                writer.Write(System.Web.HttpUtility.UrlEncode(txtEmail.Text));
-                writer.Write("&desc=");
-                writer.Write(System.Web.HttpUtility.UrlEncode(_txtDescription.Text));
-                writer.Write("&report=");
-                writer.Write(System.Web.HttpUtility.UrlEncode(_diagnostics));
-                writer.Flush();
-                writer.Close();
-                e.Result = rq;
-
-                HttpWebResponse rsp = (HttpWebResponse)rq.GetResponse();
-                rsp.Close();
-
-                // success
-                e.Result = true;
-                
-                if (rsp.StatusCode != HttpStatusCode.OK)
+                // Fallback: use cmd.exe to invoke start (works around some shell issues)
+                try
                 {
-                    Trace.TraceError("Error while sending bug report: HTTP Status code: " + e.Result.ToString());
-                    e.Result = false;
-                }                
+                    ProcessStartInfo psi = new ProcessStartInfo("cmd", $"/c start \"\" \"{url}\"")
+                    {
+                        CreateNoWindow = true,
+                        UseShellExecute = false
+                    };
+                    Process.Start(psi);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unable to open the web browser: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                Trace.TraceError("Error while sending bug report: " + ex.Message);
-                e.Result = false;
-            }
-        }
-
-        private void lnkViewDiagnostics_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                CompileDiagnostics();
-                string filename = Path.GetTempFileName() + ".txt";
-                StreamWriter writer = new StreamWriter(filename);
-                writer.Write(_diagnostics);
-                writer.Flush();
-                writer.Close();
-                Process.Start(filename);
-            }
-            catch { }
         }
     }
 }

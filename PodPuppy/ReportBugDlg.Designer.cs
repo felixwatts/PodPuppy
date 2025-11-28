@@ -28,83 +28,53 @@ namespace PodPuppy
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportBugDlg));
             this._lblPrompt = new System.Windows.Forms.Label();
-            this._txtDescription = new System.Windows.Forms.TextBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.lnkViewDiagnostics = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this._txtDiagnosticInformation = new System.Windows.Forms.TextBox();
+            this.lnkPodPuppyRepo = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // _lblPrompt
             // 
             this._lblPrompt.Location = new System.Drawing.Point(24, 22);
             this._lblPrompt.Name = "_lblPrompt";
-            this._lblPrompt.Size = new System.Drawing.Size(367, 57);
+            this._lblPrompt.Size = new System.Drawing.Size(149, 16);
             this._lblPrompt.TabIndex = 0;
-            this._lblPrompt.Text = resources.GetString("_lblPrompt.Text");
+            this._lblPrompt.Text = "Please report any bugs at the";
             // 
-            // _txtDescription
+            // _txtDiagnosticInformation
             // 
-            this._txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._txtDescription.Location = new System.Drawing.Point(27, 155);
-            this._txtDescription.Multiline = true;
-            this._txtDescription.Name = "_txtDescription";
-            this._txtDescription.Size = new System.Drawing.Size(364, 123);
-            this._txtDescription.TabIndex = 1;
+            this._txtDiagnosticInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._txtDiagnosticInformation.Enabled = false;
+            this._txtDiagnosticInformation.Location = new System.Drawing.Point(27, 110);
+            this._txtDiagnosticInformation.Multiline = true;
+            this._txtDiagnosticInformation.Name = "_txtDiagnosticInformation";
+            this._txtDiagnosticInformation.Size = new System.Drawing.Size(364, 168);
+            this._txtDiagnosticInformation.TabIndex = 1;
             // 
-            // btnSubmit
+            // lnkPodPuppyRepo
             // 
-            this.btnSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubmit.Location = new System.Drawing.Point(203, 284);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(106, 23);
-            this.btnSubmit.TabIndex = 2;
-            this.btnSubmit.Text = "Submit Report";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
-            // lnkViewDiagnostics
-            // 
-            this.lnkViewDiagnostics.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lnkViewDiagnostics.AutoSize = true;
-            this.lnkViewDiagnostics.Location = new System.Drawing.Point(25, 289);
-            this.lnkViewDiagnostics.Name = "lnkViewDiagnostics";
-            this.lnkViewDiagnostics.Size = new System.Drawing.Size(134, 13);
-            this.lnkViewDiagnostics.TabIndex = 3;
-            this.lnkViewDiagnostics.TabStop = true;
-            this.lnkViewDiagnostics.Text = "view diagnostic information";
-            this.lnkViewDiagnostics.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkViewDiagnostics_LinkClicked);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Your Email Address (Optional)";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(27, 108);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(364, 20);
-            this.txtEmail.TabIndex = 5;
+            this.lnkPodPuppyRepo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lnkPodPuppyRepo.AutoSize = true;
+            this.lnkPodPuppyRepo.Location = new System.Drawing.Point(166, 22);
+            this.lnkPodPuppyRepo.Name = "lnkPodPuppyRepo";
+            this.lnkPodPuppyRepo.Size = new System.Drawing.Size(112, 13);
+            this.lnkPodPuppyRepo.TabIndex = 3;
+            this.lnkPodPuppyRepo.TabStop = true;
+            this.lnkPodPuppyRepo.Text = "PodPuppy github repo";
+            this.lnkPodPuppyRepo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkPodPuppyRepo_LinkClicked);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 140);
+            this.label3.Location = new System.Drawing.Point(24, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 13);
+            this.label3.Size = new System.Drawing.Size(134, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Description of Problem";
+            this.label3.Text = "Diagnostic Information";
             // 
             // button2
             // 
@@ -114,21 +84,28 @@ namespace PodPuppy
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(76, 23);
             this.button2.TabIndex = 7;
-            this.button2.Text = "Cancel";
+            this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(24, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(367, 40);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "It may be helpful to include the following diagnostic information in your bug rep" +
+    "ort";
             // 
             // ReportBugDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 325);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lnkViewDiagnostics);
-            this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this._txtDescription);
+            this.Controls.Add(this.lnkPodPuppyRepo);
+            this.Controls.Add(this._txtDiagnosticInformation);
             this.Controls.Add(this._lblPrompt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ReportBugDlg";
@@ -139,14 +116,11 @@ namespace PodPuppy
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.LinkLabel lnkViewDiagnostics;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.LinkLabel lnkPodPuppyRepo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
         protected System.Windows.Forms.Label _lblPrompt;
-        protected System.Windows.Forms.TextBox _txtDescription;
+        protected System.Windows.Forms.TextBox _txtDiagnosticInformation;
+        protected System.Windows.Forms.Label label1;
     }
 }

@@ -267,23 +267,13 @@ namespace PodPuppy
 
         public BalloonFunction BalloonFunction = BalloonFunction.PlayFile;
 
-        //public bool ShowDeleteItemWarning = true;
-
         public bool StartMinimised = false;
-
-        //public bool HideSkippedItems = false;
 
         public string SyncFolder = "";
 
         public string SyncVolumeLabel = "";
 
         public bool AutoSync = false;
-
-        //public bool AddAlbumTag = false;
-
-        //public bool AddGenreTag = false;
-
-        public bool CheckForNewVersion = true;
 
         public int MaxBandwidthInBytes = 0;
 
@@ -393,7 +383,6 @@ namespace PodPuppy
                 doc.Load(result.ConfigFilename);
 
                 SetBoolFromNode(doc, "/Config/EnableScheduler", ref result.EnableScheduler);
-                //SetStringFromNode(doc, "/Config/DownloadBaseDirectory", ref result.DownloadBaseDirectory);
                 SetStringFromNode(doc, "/Config/CompletedFilesBaseDirectory", ref result.CompletedFilesBaseDirectory);
                 SetIntFromNode(doc, "/Config/MaxDownloads", ref result.MaxDownloads);
                 SetIntFromNode(doc, "/Config/CheckFeedInterval", ref result.CheckFeedInterval);               
@@ -401,7 +390,6 @@ namespace PodPuppy
                 object tmp = GetEnumFromNode(doc, "/Config/BalloonFunction", typeof(BalloonFunction));
                 if (tmp != null)
                     result.BalloonFunction = (BalloonFunction)tmp;
-                //SetBoolFromNode(doc, "/Config/ShowDeleteItemWarning", ref result.ShowDeleteItemWarning);
                 SetBoolFromNode(doc, "/Config/StartMinimised", ref result.StartMinimised);
                 bool launchOnStartup = false;
                 SetBoolFromNode(doc, "/Config/LaunchOnStartup", ref launchOnStartup);
@@ -410,13 +398,9 @@ namespace PodPuppy
                 tmp = GetEnumFromNode(doc, "/Config/SearchMode", typeof(SearchMode));
                 if (tmp != null)
                     result.SearchMode = (SearchMode)tmp;
-                //SetBoolFromNode(doc, "/Config/HideSkippedItems", ref result.HideSkippedItems);
                 SetStringFromNode(doc, "/Config/SyncFolder", ref result.SyncFolder);
                 SetBoolFromNode(doc, "/Config/AutoSync", ref result.AutoSync);
-                SetStringFromNode(doc, "/Config/SyncVolumeLabel", ref result.SyncVolumeLabel);
-                //SetBoolFromNode(doc, "/Config/AddAlbumTag", ref result.AddAlbumTag);
-                //SetBoolFromNode(doc, "/Config/AddGenreTag", ref result.AddGenreTag);
-                SetBoolFromNode(doc, "/Config/CheckForNewVersion", ref result.CheckForNewVersion);
+                SetStringFromNode(doc, "/Config/SyncVolumeLabel", ref result.SyncVolumeLabel);             
                 SetIntFromNode(doc, "/Config/MaxBandwidthInBytes", ref result.MaxBandwidthInBytes);
                 SetStringFromNode(doc, "/Config/SyncedFileTypes", ref result.SyncedFileTypes);
                 SetStringFromNode(doc, "/Config/DynamicOPMLSource", ref result.DynamicOPMLSource);

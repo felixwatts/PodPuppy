@@ -449,160 +449,6 @@ namespace PodPuppy
 
         #endregion        
 
-        #region Version Checking
-
-        private void CheckForNewerVersion()
-        {
-            if (!Statics.Config.CheckForNewVersion)
-                return;
-
-            try
-            {
-                BackgroundWorker worker = new BackgroundWorker();
-                worker.DoWork += new DoWorkEventHandler(DoCheckForNewerVersion);
-                worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(OnCheckForNewerVersionCompleted);
-                worker.RunWorkerAsync(worker);
-            }
-            catch (Exception ex)
-            {
-                Trace.TraceError("Version check error: " + ex.Message);
-            }
-
-            //try
-            //{
-            //    string url = System.Configuration.ConfigurationManager.AppSettings["versionCheckURL"];
-            //    if (url == null)
-            //        url = "http://fwatts.info/podpuppy/version.txt";
-            //    WebRequest request = WebRequest.Create(url);
-            //    request.BeginGetResponse(new AsyncCallback(OnCheckNewerVersionComplete), request);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Trace.TraceError("Version check error: " + ex.Message);
-            //}
-        }
-
-        private void OnCheckForNewerVersionCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            if (Statics.ItemListView.InvokeRequired)
-            {
-                Statics.ItemListView.Invoke(new RunWorkerCompletedEventHandler(OnCheckForNewerVersionCompleted), sender, e);
-                return;
-            }
-
-            if (e.Result == null)
-                return;
-
-            string msg = e.Result as string;
-
-            try
-            {
-                if (MessageBox.Show(this, msg, "PodPuppy Version Check", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    string url = System.Configuration.ConfigurationManager.AppSettings["downloadsPage"];
-                    if (url == null)
-                        url = "http://fwatts.info/podpuppy/downloads.html";
-                    System.Diagnostics.Process.Start(url);
-                }
-            }
-            catch (Exception ex)
-            {
-                Trace.TraceError("Version check error: " + ex.Message);
-            }
-        }
-
-        void DoCheckForNewerVersion(object sender, DoWorkEventArgs e)
-        {
-            try
-            {
-                string url = System.Configuration.ConfigurationManager.AppSettings["versionCheckURL"];
-                if (url == null)
-                    url = "http://fwatts.info/podpuppy/version.txt";
-                WebRequest request = WebRequest.Create(url);
-
-                WebResponse response = request.GetResponse();
-
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                string newestVersion = reader.ReadLine();
-                string msg = reader.ReadToEnd();
-
-                if (CompareVersionStrings(Statics.VersionNumber, newestVersion) >= 0)
-                {
-                    e.Result = null;
-                    return;
-                }
-
-                string msg2 = "A newer version of PodPuppy exists. Would you like to go to the downloads page?";
-                if (msg != null && msg != "")
-                    msg2 = msg2 + "\n\n" + msg;
-
-                e.Result = msg2;
-            }
-            catch (Exception ex)
-            {
-                Trace.TraceError("Version check error: " + ex.Message);
-                e.Result = null;
-            }
-        }
-
-        //private void OnCheckNewerVersionComplete(IAsyncResult result)
-        //{
-        //    if (Statics.ItemListView.InvokeRequired)
-        //    {
-        //        Statics.ItemListView.Invoke(new AsyncCallback(OnCheckNewerVersionComplete), result);
-        //        return;
-        //    }
-
-        //    try
-        //    {
-        //        WebRequest request = (WebRequest)result.AsyncState;
-        //        WebResponse response = request.EndGetResponse(result);
-        //        StreamReader reader = new StreamReader(response.GetResponseStream());
-        //        string newestVersion = reader.ReadLine();
-        //        string msg = reader.ReadToEnd();
-
-        //        if (CompareVersionStrings(Statics.VersionNumber, newestVersion) >= 0)
-        //            return;
-
-        //        string msg2 = "A newer version of PodPuppy exists. Would you like to go to the downloads page?";
-        //        if (msg != null && msg != "")
-        //            msg2 = msg2 + "\n\n" + msg;
-
-        //        if (MessageBox.Show(this, msg2, "PodPuppy Version Check", MessageBoxButtons.YesNo) == DialogResult.Yes)
-        //        {
-        //            string url = System.Configuration.ConfigurationManager.AppSettings["downloadsPage"];
-        //            if (url == null)
-        //                url = "http://fwatts.info/podpuppy/downloads.html";
-        //            System.Diagnostics.Process.Start(url);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Trace.TraceError("Version check error: " + ex.Message);
-        //    }
-        //}
-
-        private int CompareVersionStrings(string v1, string v2)
-        {
-            string[] v1Arr = v1.Split('.');
-            string[] v2Arr = v2.Split('.');
-
-            for (int n = 0; n < 4; n++)
-            {
-                int v1Num = int.Parse(v1Arr[n]);
-                int v2Num = int.Parse(v2Arr[n]);
-
-                if (v1Num > v2Num)
-                    return 1;
-                else if (v1Num < v2Num)
-                    return -1;
-            }
-
-            return 0;
-        }
-
-        #endregion
-
         #region Feed Lifecycle        
 
         private void RefreshFeeds()
@@ -2002,8 +1848,6 @@ namespace PodPuppy
             this.Location = new Point(Statics.Config.MainFormLeft, Statics.Config.MainFormTop);
             this.listFeeds.Size = new Size(listFeeds.Size.Width, Statics.Config.MainSplitterLocation);
 
-            CheckForNewerVersion();
-
             StartStopAutoChecking();
         }
 
@@ -2144,16 +1988,6 @@ namespace PodPuppy
         #endregion                        
        
         #endregion       
-
-        //private void menuFeedTags_Click(object sender, EventArgs e)
-        //{
-        //    if(Statics.FeedListView.SelectedItems.Count == 0)
-        //        return;
-
-        //    Feed feed = (Feed)Statics.FeedListView.SelectedItems[0];
-
-        //    new FeedTagsDlg(feed).ShowDialog(this);
-        //}
 
         private void menuItemTags_Click(object sender, EventArgs e)
         {
