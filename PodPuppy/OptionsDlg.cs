@@ -93,8 +93,6 @@ namespace PodPuppy
             _syncVolumeLabel = Statics.Config.SyncVolumeLabel;
 
             MaxBandwidthInBytes = Statics.Config.MaxBandwidthInBytes;
-            
-            chkCheckForNewVersion.Checked = Statics.Config.CheckForNewVersion;
 
             txtSyncedFileTypes.Text = Statics.Config.SyncedFileTypes;
 
@@ -132,8 +130,6 @@ namespace PodPuppy
 
             Statics.Config.MaxBandwidthInBytes = (int)MaxBandwidthInBytes;
             Statics.ThrottledStreamPool.MaximumBytesPerSecond = Statics.Config.MaxBandwidthInBytes;
-
-            Statics.Config.CheckForNewVersion = chkCheckForNewVersion.Checked;
 
             Statics.Config.SyncedFileTypes = txtSyncedFileTypes.Text.ToLower();
 

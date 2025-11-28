@@ -73,7 +73,6 @@ namespace PodPuppy
             this.label13 = new System.Windows.Forms.Label();
             this.tabMisc = new System.Windows.Forms.TabPage();
             this.chkWritePlaylists = new System.Windows.Forms.CheckBox();
-            this.chkCheckForNewVersion = new System.Windows.Forms.CheckBox();
             this.chkIncludeFiletypeInSearch = new System.Windows.Forms.CheckBox();
             this.chkShowInTaskbarWhenMinimized = new System.Windows.Forms.CheckBox();
             this.chkStartMinimised = new System.Windows.Forms.CheckBox();
@@ -531,7 +530,6 @@ namespace PodPuppy
             // tabMisc
             // 
             this.tabMisc.Controls.Add(this.chkWritePlaylists);
-            this.tabMisc.Controls.Add(this.chkCheckForNewVersion);
             this.tabMisc.Controls.Add(this.chkIncludeFiletypeInSearch);
             this.tabMisc.Controls.Add(this.chkShowInTaskbarWhenMinimized);
             this.tabMisc.Controls.Add(this.chkStartMinimised);
@@ -547,22 +545,12 @@ namespace PodPuppy
             // chkWritePlaylists
             // 
             this.chkWritePlaylists.AutoSize = true;
-            this.chkWritePlaylists.Location = new System.Drawing.Point(16, 135);
+            this.chkWritePlaylists.Location = new System.Drawing.Point(16, 112);
             this.chkWritePlaylists.Name = "chkWritePlaylists";
             this.chkWritePlaylists.Size = new System.Drawing.Size(90, 17);
             this.chkWritePlaylists.TabIndex = 5;
             this.chkWritePlaylists.Text = "Write playlists";
             this.chkWritePlaylists.UseVisualStyleBackColor = true;
-            // 
-            // chkCheckForNewVersion
-            // 
-            this.chkCheckForNewVersion.AutoSize = true;
-            this.chkCheckForNewVersion.Location = new System.Drawing.Point(16, 112);
-            this.chkCheckForNewVersion.Name = "chkCheckForNewVersion";
-            this.chkCheckForNewVersion.Size = new System.Drawing.Size(179, 17);
-            this.chkCheckForNewVersion.TabIndex = 4;
-            this.chkCheckForNewVersion.Text = "Check for new version at startup";
-            this.chkCheckForNewVersion.UseVisualStyleBackColor = true;
             // 
             // chkIncludeFiletypeInSearch
             // 
@@ -630,8 +618,8 @@ namespace PodPuppy
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OptionsDlg";
             this.Text = "PodPuppy Options";
-            this.Load += new System.EventHandler(this.OptionsDlg_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OptionsDlg_FormClosing);
+            this.Load += new System.EventHandler(this.OptionsDlg_Load);
             this.tabSync.ResumeLayout(false);
             this.tabSync.PerformLayout();
             this.tabScheduler.ResumeLayout(false);
@@ -691,7 +679,6 @@ namespace PodPuppy
         private System.Windows.Forms.TextBox txtSyncedFileTypes;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TabPage tabMisc;
-        private System.Windows.Forms.CheckBox chkCheckForNewVersion;
         private System.Windows.Forms.CheckBox chkIncludeFiletypeInSearch;
         private System.Windows.Forms.CheckBox chkShowInTaskbarWhenMinimized;
         private System.Windows.Forms.CheckBox chkStartMinimised;
