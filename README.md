@@ -7,9 +7,9 @@
 * Organize your podcasts using folders and ID3 tags
 * Sync to a device for listening on the go
 
-## Download
+## Install
 
-[PodPuppy v1.0 Installer](https://felixwatts.github.io/podpuppy/PodPuppy_v1.0_Installer.msi)
+[PodPuppy v2.0 on the Microsoft Store](https://apps.microsoft.com/detail/9pnmvhrq0d3c?ocid=webpdpshare)
 
 ## User guide
 
